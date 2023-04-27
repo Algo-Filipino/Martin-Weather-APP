@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Philippines Weather</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+	
+      
+      <div class="weather-card">
+        <div class="location-selector">
+            <label for="location-select">Select location:</label>
+            <select id="location-select">
+              <option value="Manila">Manila</option>
+              <option value="Cebu">Cebu</option>
+              <option value="Davao">Davao</option>
+              <option value="Baguio">Baguio</option>
+              <option value="Boracay">Boracay</option>
+            </select>
+          </div>
+        <div class="weather-header">
+          <div class="weather-location"><i class="fas fa-map-marker-alt"></i><span id="location"></span></div>
+          <div class="weather-timestamp"><i class="far fa-clock"></i><span id="timestamp"></span></div>
+        </div>
+        <div class="weather-body">
+          <div class="weather-temp"><i class="fas fa-thermometer-half"></i><span id="temp"></span></div>
+          <div class="weather-description"><i class="fas fa-cloud-sun"></i><span id="description"></span></div>
+          <div class="weather-humidity"><i class="fas fa-tint"></i><span id="humidity"></span></div>
+          <div class="weather-wind"><i class="fas fa-wind"></i><span id="wind"></span></div>
+        </div>
+      </div>
+      
+      
+
+	<script src="script.js"></script>
+    <script>
+        function updateTimestamp() {
+          var now = new Date();
+          var timestamp = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+          document.getElementById('timestamp').textContent = timestamp;
+          setTimeout(updateTimestamp, 1000);
+        }
+        updateTimestamp();
+      </script>
+      
+</body>
+</html>
